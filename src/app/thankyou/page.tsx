@@ -11,7 +11,7 @@ export default function ThankYouPage() {
       <section className="flex flex-col items-center justify-center px-4 py-32 text-center">
         <h1 className="text-5xl font-bold text-blue-400 mb-6">Thank You!</h1>
         <p className="text-lg text-gray-300 mb-10 max-w-xl">
-          Your message has been received. I'll get back to you as soon as possible!
+          Your message has been received. I will get back to you as soon as possible!
         </p>
 
         <div className="flex gap-4">
