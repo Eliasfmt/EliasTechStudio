@@ -1,6 +1,7 @@
 'use client';
 
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 export default function ThankYouPage() {
   return (
@@ -14,12 +15,12 @@ export default function ThankYouPage() {
         </p>
 
         <div className="flex gap-4">
-          <a href="/" className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition">
+        <Link href="/" className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded transition">
             Return Home
-          </a>
-          <a href="/projects" className="px-6 py-3 border border-blue-500 text-blue-400 font-semibold rounded hover:bg-blue-600 hover:text-white transition">
+          </Link>
+          <Link href="/projects" className="px-6 py-3 border border-blue-500 text-blue-400 font-semibold rounded hover:bg-blue-600 hover:text-white transition">
             View Projects
-          </a>
+          </Link>
         </div>
       </section>
     </main>

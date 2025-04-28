@@ -1,5 +1,7 @@
 'use client';
 
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <nav className="relative bg-black border-b border-white border-[0.5px] py-2">
@@ -10,10 +12,10 @@ export default function Navbar() {
         </h1>
       </div>
       <ul className="flex justify-center gap-15 text-white text-sm">
-        <li><a href="/" className="hover:text-blue-400">Home</a></li>
-        <li><a href="/about" className="hover:text-blue-400">About</a></li>
-        <li><a href="/projects" className="hover:text-blue-400">Projects</a></li>
-        <li><a href="/contact" className="hover:text-blue-400">Contact</a></li>
+        <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
+        <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
+        <li><Link href="/projects" className="hover:text-blue-400">Projects</Link></li>
+        <li><Link href="/contact" className="hover:text-blue-400">Contact</Link></li>
       </ul>
     </nav>
   );

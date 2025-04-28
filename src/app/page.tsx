@@ -9,7 +9,7 @@ export default function Home() {
   const [displayedText, setDisplayedText] = useState("");
   
 
-  const fullText = `prrompt:Please write me a title ....`;
+  const fullText = "prrompt:Please write me a title ....";
 
   useEffect(() => {
     if (showTyping) {
@@ -22,7 +22,7 @@ export default function Home() {
           clearInterval(interval);
           setShowTyping(false);   // ✅ Immediately hide it here
         }
-      }, 100); // Typing speed (150 ms per letter)
+      }, 100, [fullText]); // Typing speed (150 ms per letter)
   
       return () => clearInterval(interval);
     }
