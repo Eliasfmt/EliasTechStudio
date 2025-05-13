@@ -40,20 +40,22 @@ export default function Projects() {
 
           {/* Project Card 2 */}
           <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">AI Analytics Dashboard</h3>
+            <h3 className="text-2xl font-bold mb-4">AI-Powered PDF & DOCX Assistant</h3>
             <p className="text-gray-400 mb-4">
-              ML-powered data visualization platform with predictive analytics and interactive reports.
+            Securely chat with your documents using AI — instant Q&A, summaries, and a built-in General 
+            AI mode.
             </p>
             <div className="flex gap-2 flex-wrap mb-4">
               <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
-              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">TensorFlow</span>
-              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">D3.js</span>
-              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Flask</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">FastAPI</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">AWS S3</span>
             </div>
             <a href="#project2" className="text-blue-400 hover:underline">View Project ➔</a>
 
             <video 
-            src="/videos/ai-analytics-preview.mp4" 
+            src="/videos/LLMpdfDemo.mp4" 
             controls 
             className="w-full mt-4 rounded-md h-40 object-cover"
             />
@@ -72,18 +74,33 @@ export default function Projects() {
             className="w-full max-w-4xl mx-auto rounded-md mb-8"
             />
         </div>   
-            <p className="text-gray-400 text-center max-w-3xl mx-auto">
-            Client data query assistant powered by Python, LangChain, OpenAI, and AWS RDS.
-            Users ask natural questions to retrieve loan and customer info instantly.
-            Built with Next.js, Tailwind CSS, and deployed via Render and Vercel.
+            <p className="text-gray-400 text-center max-w-5xl mx-auto">
+            Client data query assistant built with Python, LangChain, OpenAI, and AWS RDS.
+            This tool enables users to securely query loan and customer data using natural language, delivering instant,
+             accurate answers from internal records. Developed with a modern stack including Next.js and Tailwind CSS, 
+             and deployed via Render and Vercel. Designed to streamline internal operations for a Latin American financial 
+             company.
             </p>
       </section>
 
       <section id="project2" className="py-20 px-6 bg-black">
-        <h2 className="text-3xl font-bold text-center mb-6">AI Analytics Dashboard</h2>
-        <p className="text-gray-400 text-center max-w-3xl mx-auto">
-          [Insert full description, video, screenshots about AI Analytics Dashboard project here.]
-        </p>
+        <h2 className="text-3xl font-bold text-center mb-6">AI-Powered PDF & DOCX Assistant</h2>
+        <div className="flex justify-center mb-6">
+            <video 
+            src="/videos/LLMpdfDemo.mp4" 
+            controls 
+            className="w-full max-w-4xl mx-auto rounded-md mb-8"
+            />
+        </div>   
+            <p className="text-gray-400 text-center max-w-5xl mx-auto">
+            Doc Saver Chat is a full-stack AI tool that lets users upload PDF/DOCX files and ask 
+            natural-language questions with instant, contextual answers. It also supports a “General AI” 
+            mode for standalone chat without documents. Built with FastAPI, Next.js, LangChain, and OpenAI, 
+            the app performs document chunking, embedding, and vector search using PostgreSQL. Features include 
+            anonymous access, session tracking, upload rate limiting, and a dual-mode user flow. Deployed via Render and 
+            Vercel, the project demonstrates scalable NLP integration and production-ready UX.
+
+            </p>
       </section>
 
     </main>
