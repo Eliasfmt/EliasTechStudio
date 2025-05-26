@@ -3,13 +3,16 @@ import Navbar from "@/components/Navbar";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-r from-black via-indigo-950 via-indigo-900 via-blue-800 via-blue-500 to-cyan-300 text-white">
+    <main
+      className="min-h-screen text-white"
+      style={{ background: "linear-gradient(90deg, #14081A 0%, #2137C4 50%, #368CC2 100%)"
+      }} > 
       {/* Navbar */}
       <Navbar />
       {/* About Section */}
       <section className="flex flex-col items-center justify-center text-center px-6 py-32">
         <h1 className="text-5xl font-bold mb-10 text-blue-500">About Me</h1>
-        <p className="text-gray-400 text-center max-w-4xl mx-auto leading-relaxed px-4">
+        <p className="text-gray-200 text-center  max-w-4xl mx-auto leading-relaxed px-4 text-xl">
         I started my career in the finance sector, working in collections, where I first realized<br />
         how important organized information was for driving better results. Managing accounts<br />
         and tracking payments showed me that structured data wasn’t just helpful — it was essential.<br /><br />

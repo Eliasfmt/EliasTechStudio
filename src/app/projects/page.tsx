@@ -4,7 +4,11 @@ import Navbar from "@/components/Navbar";
 
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-gradient-to-r from-indigo-950 via-indigo-900 via-blue-800 via-blue-500 to-sky-300 text-white">
+      <main
+      className="min-h-screen text-white"
+      style={{ background: "linear-gradient(90deg, #181E4D 0%, #1140A6 50%, #51B6F5 100%)"
+      }} > 
+
       <Navbar />
 
       {/* Featured Projects Section */}
