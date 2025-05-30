@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://em-tech.ai
+
+# Sitemaps
+Sitemap: https://em-tech.ai/sitemap.xml
