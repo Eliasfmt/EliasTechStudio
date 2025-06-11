@@ -1,6 +1,7 @@
 import { sanity } from '@/lib/sanity.client';
 import { PortableText } from '@portabletext/react';
 import Navbar from "@/components/Navbar";
+import type { PortableTextComponents } from '@portabletext/react';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const query = `*[_type == "blogPost" && slug.current == $slug][0]{
@@ -13,7 +14,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
 
   // PortableText components: you can add or edit these for more control!
-  const components = {
+  const components: PortableTextComponents= {
     block: {
       h1: ({ children }: { children?: React.ReactNode }) =>
         <h1 className="text-4xl font-bold my-6">{children}</h1>,
@@ -58,7 +59,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           }}
         >
           {/* HERE'S THE FIX: */}
-          <PortableText value={post.body} components={components as any} />
+          <PortableText value={post.body} components={components} />
         </article>
       </main>
     </>

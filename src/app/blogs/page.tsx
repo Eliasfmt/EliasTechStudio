@@ -1,59 +1,4 @@
 
-// import Navbar from "@/components/Navbar";
-// import { sanity } from '@/lib/sanity.client';
-
-// type BlogPost = {
-//   _id: string;
-//   title: string;
-//   slug: { current: string };
-//   publishedAt: string;
-//   body: any;
-// };
-
-// export default async function BlogPage() {
-//   const posts: BlogPost[] = await sanity.fetch(
-//     `*[_type == "blogPost"] | order(publishedAt desc){
-//       _id, title, slug, publishedAt, body
-//     }`
-//   );
-
-//     return (
-//      <main
-//           className="min-h-screen text-white"
-//           style={{ background: "linear-gradient(90deg, #181E4D 0%, #1140A6 50%, #51B6F5 100%)"
-//           }} > 
-    
-//           <Navbar />
-//     <div className="p-6 text-center">
-//       <h1 className="text-3xl font-bold text-red-500 mb-4">Blog Posts Coming Soon!</h1>
-//       <p className="text-gray-600">Check back later for our latest preschool tips and updates.</p>
-//     </div>
-//     </main>
-
-    //      <main className="container mx-auto py-8">
-    //   <h1 className="text-3xl font-bold mb-6">Blog</h1>
-    //   <div className="space-y-6">
-    //     {posts.map(post => (
-    //       <article key={post._id} className="p-4 border rounded-lg bg-white">
-    //         <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-    //         <p className="text-gray-500 text-sm mb-2">
-    //           {new Date(post.publishedAt).toLocaleDateString()}
-    //         </p>
-    //         {/* Opcional: muestra un resumen o el cuerpo del post */}
-    //         {/* <PortableText value={post.body} /> */}
-    //         <a href={`/blogs/${post.slug.current}`} className="text-blue-600 hover:underline">
-    //           Leer más
-    //         </a>
-    //       </article>
-    //     ))}
-    //   </div>
-    // </main>
-  
-
-//   );
-// }
-
-
 // src/app/blogs/page.tsx
 import Navbar from "@/components/Navbar";
 import { sanity } from "@/lib/sanity.client"; // or your actual import
@@ -67,6 +12,14 @@ const query = `*[_type == "blogPost"] | order(publishedAt desc){
 export default async function BlogPage() {
   const posts = await sanity.fetch(query);
 
+  type BlogPost = {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  // Add other fields if needed
+};
+
   return (
   <>
     <Navbar />
@@ -76,7 +29,7 @@ export default async function BlogPage() {
         {posts.length === 0 && (
           <p className="text-center text-lg text-white">No blog posts found.</p>
         )}
-        {posts.map((post: any) => (
+        {posts.map((post: BlogPost) => (
           <div
             key={post._id}
             className="bg-white/80 rounded-xl shadow-md p-6 border hover:shadow-lg transition"
