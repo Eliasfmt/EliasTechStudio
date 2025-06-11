@@ -3,11 +3,7 @@ import { PortableText } from '@portabletext/react';
 import Navbar from "@/components/Navbar";
 import type { PortableTextComponents } from '@portabletext/react';
 
-type PageProps = {
-  params: { slug: string };
-};
-
-export default async function BlogPostPage({ params }: PageProps) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const query = `*[_type == "blogPost" && slug.current == $slug][0]{
     title, body, publishedAt
   }`;
@@ -18,7 +14,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   // PortableText components: you can add or edit these for more control!
-  const components: PortableTextComponents= {
+  const components: PortableTextComponents = {
     block: {
       h1: ({ children }: { children?: React.ReactNode }) =>
         <h1 className="text-4xl font-bold my-6">{children}</h1>,
@@ -62,7 +58,6 @@ export default async function BlogPostPage({ params }: PageProps) {
             color: 'black',
           }}
         >
-          {/* HERE'S THE FIX: */}
           <PortableText value={post.body} components={components} />
         </article>
       </main>
