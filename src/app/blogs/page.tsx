@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import { sanity } from "@/lib/sanity.client"; // or your actual import
 // import { groq } from "next-sanity"; // if you use it
-import Link from "next/link";
+
 
 const query = `*[_type == "blogPost"] | order(publishedAt desc){
   _id, title, slug, publishedAt, body
