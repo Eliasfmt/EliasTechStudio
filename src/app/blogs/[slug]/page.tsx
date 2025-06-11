@@ -3,41 +3,39 @@ import { PortableText } from '@portabletext/react';
 import Navbar from "@/components/Navbar";
 import type { PortableTextComponents } from '@portabletext/react';
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function BlogPostPage({ params }: PageProps) {
   const query = `*[_type == "blogPost" && slug.current == $slug][0]{
     title, body, publishedAt
   }`;
+
   const post = await sanity.fetch(query, { slug: params.slug });
 
   if (!post) {
     return <div>Post not found.</div>;
   }
 
-  // PortableText components: you can add or edit these for more control!
   const components: PortableTextComponents = {
     block: {
-      h1: ({ children }: { children?: React.ReactNode }) =>
-        <h1 className="text-4xl font-bold my-6">{children}</h1>,
-      h2: ({ children }: { children?: React.ReactNode }) =>
-        <h2 className="text-3xl font-bold my-4">{children}</h2>,
-      normal: ({ children }: { children?: React.ReactNode }) =>
-        <p className="mb-4 leading-relaxed">{children}</p>,
+      h1: ({ children }) => <h1 className="text-4xl font-bold my-6">{children}</h1>,
+      h2: ({ children }) => <h2 className="text-3xl font-bold my-4">{children}</h2>,
+      normal: ({ children }) => <p className="mb-4 leading-relaxed">{children}</p>,
     },
     list: {
-      bullet: ({ children }: { children?: React.ReactNode }) =>
-        <ul className="list-disc pl-6">{children}</ul>,
-      number: ({ children }: { children?: React.ReactNode }) =>
-        <ol className="list-decimal pl-6">{children}</ol>,
+      bullet: ({ children }) => <ul className="list-disc pl-6">{children}</ul>,
+      number: ({ children }) => <ol className="list-decimal pl-6">{children}</ol>,
     },
     listItem: {
-      bullet: ({ children }: { children?: React.ReactNode }) =>
-        <li className="mb-2">{children}</li>,
+      bullet: ({ children }) => <li className="mb-2">{children}</li>,
     },
     marks: {
-      strong: ({ children }: { children?: React.ReactNode }) =>
-        <strong className="font-semibold">{children}</strong>,
-      em: ({ children }: { children?: React.ReactNode }) =>
-        <em className="italic">{children}</em>,
+      strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+      em: ({ children }) => <em className="italic">{children}</em>,
     },
   };
 
