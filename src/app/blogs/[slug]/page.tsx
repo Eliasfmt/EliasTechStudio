@@ -1,11 +1,17 @@
 // src/app/blogs/[slug]/page.tsx
 
-export default async function Page({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  return <div>Slug: {params.slug}</div>;
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function Page({ params }: Props) {
+  return (
+    <div>
+      <h1>Blog slug: {params.slug}</h1>
+    </div>
+  );
 }
 
 
