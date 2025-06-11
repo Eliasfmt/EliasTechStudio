@@ -1,17 +1,12 @@
 // src/app/blogs/[slug]/page.tsx
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+export default function Page({ params }: { params: { slug: string } }) {
+  return <div>Blog post slug: {params.slug}</div>;
+}
 
-export default async function Page({ params }: Props) {
-  return (
-    <div>
-      <h1>Blog slug: {params.slug}</h1>
-    </div>
-  );
+// ⬇️ This is required or Next.js will infer wrong types!
+export async function generateStaticParams() {
+  return [];
 }
 
 
