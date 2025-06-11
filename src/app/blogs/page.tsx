@@ -1,8 +1,8 @@
 
 // src/app/blogs/page.tsx
 import Navbar from "@/components/Navbar";
-import { sanity } from "@/lib/sanity.client"; // or your actual import
-// import { groq } from "next-sanity"; // if you use it
+import { sanity } from "@/lib/sanity.client"; 
+
 
 
 const query = `*[_type == "blogPost"] | order(publishedAt desc){
