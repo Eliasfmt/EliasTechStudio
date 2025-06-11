@@ -3,13 +3,11 @@ import { PortableText } from '@portabletext/react';
 import Navbar from "@/components/Navbar";
 import type { PortableTextComponents } from '@portabletext/react';
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function BlogPostPage({ params }: PageProps) {
+export default async function Page({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const query = `*[_type == "blogPost" && slug.current == $slug][0]{
     title, body, publishedAt
   }`;
