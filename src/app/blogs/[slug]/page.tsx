@@ -1,0 +1,66 @@
+import { sanity } from '@/lib/sanity.client';
+import { PortableText } from '@portabletext/react';
+import Navbar from "@/components/Navbar";
+
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+  const query = `*[_type == "blogPost" && slug.current == $slug][0]{
+    title, body, publishedAt
+  }`;
+  const post = await sanity.fetch(query, { slug: params.slug });
+
+  if (!post) {
+    return <div>Post not found.</div>;
+  }
+
+  // PortableText components: you can add or edit these for more control!
+  const components = {
+    block: {
+      h1: ({ children }: { children?: React.ReactNode }) =>
+        <h1 className="text-4xl font-bold my-6">{children}</h1>,
+      h2: ({ children }: { children?: React.ReactNode }) =>
+        <h2 className="text-3xl font-bold my-4">{children}</h2>,
+      normal: ({ children }: { children?: React.ReactNode }) =>
+        <p className="mb-4 leading-relaxed">{children}</p>,
+    },
+    list: {
+      bullet: ({ children }: { children?: React.ReactNode }) =>
+        <ul className="list-disc pl-6">{children}</ul>,
+      number: ({ children }: { children?: React.ReactNode }) =>
+        <ol className="list-decimal pl-6">{children}</ol>,
+    },
+    listItem: {
+      bullet: ({ children }: { children?: React.ReactNode }) =>
+        <li className="mb-2">{children}</li>,
+    },
+    marks: {
+      strong: ({ children }: { children?: React.ReactNode }) =>
+        <strong className="font-semibold">{children}</strong>,
+      em: ({ children }: { children?: React.ReactNode }) =>
+        <em className="italic">{children}</em>,
+    },
+  };
+
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-blue-50 py-12 px-4 text-black">
+        <h1 className="text-4xl font-extrabold text-black text-center mb-6">{post.title}</h1>
+        <p className="mb-8 text-black text-center text-xl">
+          {new Date(post.publishedAt).toLocaleDateString()}
+        </p>
+        <article
+          style={{
+            fontSize: '1.5rem',
+            lineHeight: 1.7,
+            maxWidth: '52rem',
+            margin: '0 auto',
+            color: 'black',
+          }}
+        >
+          {/* HERE'S THE FIX: */}
+          <PortableText value={post.body} components={components as any} />
+        </article>
+      </main>
+    </>
+  );
+}
