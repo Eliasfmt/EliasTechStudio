@@ -3,7 +3,9 @@ import { PortableText } from '@portabletext/react';
 import Navbar from "@/components/Navbar";
 import type { PortableTextComponents } from '@portabletext/react';
 
-export default async function BlogPostPage({ params }: any) {
+type PageProps = { params: { slug: string } };
+
+export default async function BlogPostPage({ params }: PageProps) {
   const query = `*[_type == "blogPost" && slug.current == $slug][0]{
     title, body, publishedAt
   }`;
