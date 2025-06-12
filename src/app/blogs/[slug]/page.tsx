@@ -1,14 +1,13 @@
 // src/app/blogs/[slug]/page.tsx
 
-export default async function Page(props: { params: { slug: string } }) {
-  const { slug } = await props.params; // UNWRAP params WITH await
+export default async function Page(props: { params: Promise<{ slug: string }> }) {
+  const { slug } = await props.params;
   return <div>Blog post slug: {slug}</div>;
 }
 
 export async function generateStaticParams() {
   return [{ slug: "hello-world" }, { slug: "another-post" }];
 }
-
 // import { sanity } from '@/lib/sanity.client';
 // import { PortableText } from '@portabletext/react';
 // import Navbar from "@/components/Navbar";
