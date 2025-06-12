@@ -10,14 +10,14 @@ export default function Navbar() {
     <nav className="bg-black border-b border-white border-[0.5px] py-10 px-4 flex items-center justify-between w-full relative">
       {/* Logo */}
       <div className="flex items-center">
-        <h1 className="text-white font-bold text-2xl">
+        <h1 className="text-white font-bold text-xl">
           <span className="text-white">EM</span>
-          <span className="text-blue-500"> Tech ai</span>
+          <span className="text-blue-500"> Tech </span>
         </h1>
       </div>
 
       {/* Desktop Navigation Links */}
-      <ul className="font-sans text-white text-2xl flex absolute left-1/2 transform -translate-x-1/2 gap-12">
+      <ul className="font-sans text-white text-xl flex absolute left-1/2 transform -translate-x-1/2 gap-12">
         <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
         <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
         <li><Link href="/projects" className="hover:text-blue-400">Projects</Link></li>
