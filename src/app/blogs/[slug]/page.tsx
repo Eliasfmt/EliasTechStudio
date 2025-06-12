@@ -1,14 +1,13 @@
 // src/app/blogs/[slug]/page.tsx
 
-export default function Page({ params }: { params: { slug: string } }) {
-  return <div>Blog post slug: {params.slug}</div>;
+export default async function Page(props: { params: { slug: string } }) {
+  const { slug } = await props.params; // UNWRAP params WITH await
+  return <div>Blog post slug: {slug}</div>;
 }
 
-// ⬇️ This is required or Next.js will infer wrong types!
 export async function generateStaticParams() {
-  return [];
+  return [{ slug: "hello-world" }, { slug: "another-post" }];
 }
-
 
 // import { sanity } from '@/lib/sanity.client';
 // import { PortableText } from '@portabletext/react';
