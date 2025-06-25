@@ -1,19 +1,32 @@
 // src/app/blogs/[slug]/page.tsx
 
-// export default async function Page(props: { params: Promise<{ slug: string }> }) {
-//   const { slug } = await props.params;
-//   return <div>Blog post slug: {slug}</div>;
-// }
-
-// export async function generateStaticParams() {
-//   return [{ slug: "hello-world" }, { slug: "another-post" }];
-// }
-
-
 import { sanity } from '@/lib/sanity.client';
 import { PortableText } from '@portabletext/react';
 import Navbar from "@/components/Navbar";
 import type { PortableTextComponents } from '@portabletext/react';
+
+// ---------- Metadata starts here  ---------------
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const query = `*[_type == "blogPost" && slug.current == $slug][0]{
+    title,
+    body
+  }`;
+
+  const post = await sanity.fetch(query, { slug: params.slug });
+
+  const plainText = post?.body
+    ?.map((block: any) => block.children?.map((c: any) => c.text).join(' '))
+    .join(' ')
+    .slice(0, 160) || 'Read our latest post on EM Tech AI.';
+
+  return {
+    title: post?.title || 'Blog Post | EM Tech',
+    description: plainText,
+  };
+}
+// ---------- Metadata ends here  ---------------
 
 // Notice the type for params: Promise<{ slug: string }>
 export default async function Page(props: { params: Promise<{ slug: string }> }) {
