@@ -88,10 +88,6 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
 }
 
 export async function generateStaticParams() {
-  // Optionally fetch real slugs from Sanity for static generation
-  // const slugs = await sanity.fetch(`*[_type == "blogPost"]{ "slug": slug.current }`);
-  // return slugs;
-
-  // Hardcoded for demo — replace with the above when ready
-  return [{ slug: "hello-world" }, { slug: "another-post" }];
+  const slugs = await sanity.fetch(`*[_type == "blogPost" && defined(slug.current)]{ "slug": slug.current }`);
+  return slugs.map((s: { slug: string }) => ({ slug: s.slug }));
 }
