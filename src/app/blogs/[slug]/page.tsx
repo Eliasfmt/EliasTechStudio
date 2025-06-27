@@ -16,8 +16,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const post = await sanity.fetch(query, { slug: params.slug });
 
-  const plainText = post?.body
-    ?.map((block: any) => block.children?.map((c: any) => c.text).join(' '))
+  type Block = {
+  children?: { text: string }[];
+  };
+
+  const plainText = (post?.body as Block[] | undefined)
+    ?.map((block) =>
+      block.children?.map((c) => c.text).join(' ')
+    )
     .join(' ')
     .slice(0, 160) || 'Read our latest post on EM Tech AI.';
 
