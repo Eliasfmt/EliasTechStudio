@@ -8,13 +8,11 @@ import type { PortableTextComponents } from '@portabletext/react';
 // ---------- Metadata starts here  ---------------
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const query = `*[_type == "blogPost" && slug.current == $slug][0]{
-    title,
-    body
-  }`;
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await props.params;
 
-  const post = await sanity.fetch(query, { slug: params.slug });
+  const query = `*[_type == "blogPost" && slug.current == $slug][0]{ title, body }`;
+  const post = await sanity.fetch(query, { slug });
 
   type Block = {
   children?: { text: string }[];
@@ -35,10 +33,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 // ---------- Metadata ends here  ---------------
 
 // Notice the type for params: Promise<{ slug: string }>
-export default async function Page(props: { params: Promise<{ slug: string }> }) {
-  // Await params because in Next.js 15+ it's a Promise
+// export default async function Page(props: { params: Promise<{ slug: string }> }) {
+// export default async function Page({ params }: { params: { slug: string } }){
+  export default async function Page(props: { params: Promise<{ slug: string }> }) {
   const { slug } = await props.params;
-
+  // Await params because in Next.js 15+ it's a Promise
+  // const { slug } = await props.params;
+  // const { slug } = params;
   // Fetch the post from Sanity
   const query = `*[_type == "blogPost" && slug.current == $slug][0]{
     title, body, publishedAt
