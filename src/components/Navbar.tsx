@@ -17,7 +17,7 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Navigation Links */}
-      <ul className="font-sans text-white text-xl flex absolute left-1/2 transform -translate-x-1/2 gap-12">
+      <ul className="hidden md:flex font-sans text-white text-xl absolute left-1/2 transform -translate-x-1/2 gap-12">
         <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
         <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
         <li><Link href="/projects" className="hover:text-blue-400">Projects</Link></li>
