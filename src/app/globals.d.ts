@@ -6,7 +6,7 @@ declare global {
     __gt_loaded?: boolean;
     google: {
       translate?: {
-        TranslateElement?: any;
+        TranslateElement?: unknown;
       };
     };
   }
