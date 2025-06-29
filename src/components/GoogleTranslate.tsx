@@ -8,7 +8,7 @@ import { useEffect, useRef } from 'react';
 declare global {
   /* merge-safe: identical modifiers everywhere */
   interface Window {
-    google: any;                               // Google’s namespace
+    // google: any;                               // Google’s namespace
     googleTranslateElementInit: () => void;    // global callback
     __gt_script_loaded?: boolean;              // we added <script> once
     __gt_widget_node?: HTMLElement;            // keep the gadget to re-use
@@ -39,7 +39,7 @@ export default function GoogleTranslate() {
     window.googleTranslateElementInit = () => {
       if (!mountRef.current || window.__gt_widget_node) return;
 
-      // @ts-ignore  Google’s JS isn’t typed
+      // @ts-expect-error   Google’s JS isn’t typed
       new window.google.translate.TranslateElement(
         {
           pageLanguage: 'en',
@@ -105,7 +105,7 @@ export default function GoogleTranslate() {
 //     window.googleTranslateElementInit = () => {
 //       if (!mountRef.current || window.__gt_widget_node) return;
 
-//       // @ts-ignore  (Google’s types aren’t in TS)
+//       // @ts-expect-error  (Google’s types aren’t in TS)
 //       new window.google.translate.TranslateElement(
 //         {
 //           pageLanguage: 'en',
@@ -149,10 +149,10 @@ export default function GoogleTranslate() {
 //     document.body.appendChild(s);
 
 //     // global callback Google expects
-//     // @ts-ignore
+//     // @ts-expect-error 
 //     window.googleTranslateElementInit = () => {
 //       if (!mountPoint.current) return;
-//       // @ts-ignore
+//       // @ts-expect-error 
 //       new window.google.translate.TranslateElement(
 //         { pageLanguage: 'en',
 //           includedLanguages: 'en,ru,es,fr,de,pt,it,zh-CN,ar', // ← only allow these
