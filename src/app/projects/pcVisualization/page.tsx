@@ -34,6 +34,8 @@ export default function VisualizationProject() {
     //   </a>
     // </div>
     // </div>
+
+    
     <div className="bg-blue-50">
     <Navbar />
     <section className="bg-blue-50 max-w-3xl mx-auto px-4 py-12">
@@ -63,7 +65,7 @@ export default function VisualizationProject() {
     <li><code>city</code>: City of residence</li>
     <li><code>state</code>: State or province</li>
     <li><code>zip_code</code>: Postal or ZIP code</li>
-    <li><code>property_type</code>: Either "Commercial" or "Residential"</li>
+    <li><code>property_type</code>: Either &ldquo;Commercial&rdquo; or &ldquo;Residential&rdquo;</li>
   </ul>
 
   <h3 className="text-xl font-semibold mb-2">Sales Table</h3>
@@ -72,9 +74,9 @@ export default function VisualizationProject() {
     <li><code>salesman_id</code>: ID of the salesperson who made the sale</li>
     <li><code>customer_id</code>: Foreign key linking the sale to a customer</li>
     <li><code>date_of_sale</code>: Date of the transaction</li>
-    <li><code>service_type</code>: Type of service (“Roach Only,” “Mosquito Treatment,” or “Full Pest Control”)</li>
+    <li><code>service_type</code>: Type of service (&ldquo;Roach Only&rdquo;, &ldquo;Mosquito Treatment&rdquo;, or &ldquo;Full Pest Control&rdquo;)</li>
     <li><code>total_contract_value</code>: Dollar value of the contract</li>
-    <li><code>payment_status</code>: “Paid,” “Pending,” or “Partial”</li>
+    <li><code>payment_status</code>: &ldquo;Paid&rdquo;, &ldquo;Pending&rdquo;, or &ldquo;Partial&rdquo;</li>
     <li><code>years_agreement</code>: Duration of the contract in years</li>
   </ul>
 
