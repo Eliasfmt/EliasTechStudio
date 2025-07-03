@@ -13,7 +13,7 @@ export default function Projects() {
 
       {/* Featured Projects Section */}
       <section className="flex flex-col items-center justify-center py-20 px-6">
-        <h2 className="text-4xl font-bold text-center mb-16 text-blue-500">
+        <h2 className="text-4xl font-bold text-center mb-16 text-blue-200">
           Featured Projects
         </h2>
 
@@ -67,6 +67,45 @@ export default function Projects() {
           </div>
         </div>
       </section>
+
+        {/* Data Visualization Projects  */}
+
+      <section className="flex flex-col items-center justify-center py-20 px-6">
+        <h2 className="text-4xl font-bold text-center mb-16 text-blue-200">
+          Data Visualization Projects
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
+          {/* Visualization Project Card 1 */}
+          <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-4">Database & BI Dashboard for a Pest Control Business</h3>
+            <p className="text-gray-400 mb-4">
+            Simulated a full data pipeline—from database creation with synthetic pest control data to interactive 
+            visualization. Built with PostgreSQL on Google Cloud SQL and connected to Power BI for real-time business insights.
+            </p>
+            <div className="flex gap-2 flex-wrap mb-4">
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Power BI</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Google Cloud SQL</span>
+            </div>
+            <a href="/projects/pcVisualization" className="text-blue-400 hover:underline">View Project</a>
+
+            <img
+              src="/image/pcVisualizationImages/PCDashboard.png"
+              alt="Pest Control Dashboard"
+              className="w-full mt-4 rounded-md h-40 object-cover"
+            />
+
+          </div>
+
+          {/* Visualization Project Card 2 */}
+          
+        </div>
+      </section>
+
+
+
 
       {/* Project Details Sections (Hidden Below) */}
       <section id="project1" className="py-20 px-6 bg-black">
