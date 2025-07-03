@@ -47,7 +47,7 @@ export default function VisualizationProject() {
       />
 <br/>
   <h2 className="text-2xl font-semibold mb-4">Overview</h2>
-  <p className="mb-6">During my time working in sales at a pest control company, I didn’t have the opportunity to build a database, as my responsibilities were focused on direct sales. However, after leaving that role, I decided to create a sample project using mock data to illustrate how the business could benefit from adopting modern data practices.</p>
+  <p className="mb-6">During my time working in sales at a pest control company, I didn&rsquo;t have the opportunity the opportunity to build a database, as my responsibilities were focused on direct sales. However, after leaving that role, I decided to create a sample project using mock data to illustrate how the business could benefit from adopting modern data practices.</p>
 
   <h2 className="text-2xl font-semibold mb-4">Data Generation</h2>
   <p className="mb-4">Using Python, I generated synthetic data relevant to the pest control industry. The dataset includes three main tables: <strong>Customers</strong>, <strong>Sales</strong>, and <strong>Salesmen</strong>.</p>
@@ -55,8 +55,8 @@ export default function VisualizationProject() {
   <h3 className="text-xl font-semibold mb-2">Customers Table</h3>
   <ul className="list-disc list-inside mb-4">
     <li><code>customer_id</code>: Unique identifier for each customer</li>
-    <li><code>first_name</code>: Customer’s first name</li>
-    <li><code>last_name</code>: Customer’s last name</li>
+    <li><code>first_name</code>: Customer&rsquo;s first name</li>
+    <li><code>last_name</code>: Customer&rsquo;s last name</li>
     <li><code>email</code>: Email address</li>
     <li><code>phone</code>: Phone number</li>
     <li><code>address</code>: Street address</li>
@@ -119,7 +119,7 @@ export default function VisualizationProject() {
     <li>Contract values</li>
     <li>Payment statuses</li>
   </ul>
-  <p className="mb-6">Since the data is randomly generated, the visualizations don’t reveal real business trends. However, this prototype demonstrates how a company could extract valuable insights using real operational data by tracking KPIs and performance metrics.</p>
+  <p className="mb-6">Since the data is randomly generated, the visualizations don&rsquo;t reveal real business trends. However, this prototype demonstrates how a company could extract valuable insights using real operational data by tracking KPIs and performance metrics.</p>
 
         <img
         src="/image/pcVisualizationImages/PCDashboard.png"
@@ -134,7 +134,7 @@ export default function VisualizationProject() {
         alt="Pest Control Dashboard"
         className="w-full max-w-4xl mx-auto rounded-md border border-gray-500"
       />
-      
+
     <br/>
 
   <h2 className="text-2xl font-semibold mb-4">Conclusion</h2>
