@@ -4,6 +4,12 @@ import { sanity } from '@/lib/sanity.client';
 import { PortableText } from '@portabletext/react';
 import Navbar from "@/components/Navbar";
 import type { PortableTextComponents } from '@portabletext/react';
+import imageUrlBuilder from '@sanity/image-url';
+
+const builder = imageUrlBuilder(sanity);
+function urlFor(source: any) {
+  return builder.image(source);
+}
 
 // ---------- Metadata starts here  ---------------
 import { Metadata } from 'next';
@@ -68,6 +74,15 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
       strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
       em: ({ children }) => <em className="italic">{children}</em>,
     },
+    types: {
+    image: ({ value }) => (
+      <img
+        src={value.asset?._ref?.startsWith('image-') ? urlFor(value).url() : value.asset.url}
+        alt={value.alt || 'Blog image'}
+        className="w-full rounded-xl my-6"
+      />
+    ),
+   },
   };
 
   return (
