@@ -6,8 +6,9 @@ import Navbar from "@/components/Navbar";
 import type { PortableTextComponents } from '@portabletext/react';
 import imageUrlBuilder from '@sanity/image-url';
 
+
 const builder = imageUrlBuilder(sanity);
-function urlFor(source: any) {
+function urlFor(source: Record<string, any>) {
   return builder.image(source);
 }
 

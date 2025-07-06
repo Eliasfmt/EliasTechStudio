@@ -4,8 +4,9 @@ import Navbar from "@/components/Navbar";
 import { sanity } from "@/lib/sanity.client"; 
 import imageUrlBuilder from '@sanity/image-url';
 
+
 const builder = imageUrlBuilder(sanity);
-function urlFor(source: any) {
+function urlFor(source: Record<string, any>) {
   return builder.image(source);
 }
 // const query = `*[_type == "blogPost"] | order(publishedAt desc){
