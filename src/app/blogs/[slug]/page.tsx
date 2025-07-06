@@ -8,7 +8,7 @@ import imageUrlBuilder from '@sanity/image-url';
 
 
 const builder = imageUrlBuilder(sanity);
-function urlFor(source: Record<string, any>) {
+function urlFor(source: Parameters<typeof builder.image>[0]) {
   return builder.image(source);
 }
 
