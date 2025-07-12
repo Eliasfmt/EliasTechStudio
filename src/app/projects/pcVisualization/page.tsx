@@ -3,39 +3,7 @@
 import Navbar from "@/components/Navbar";
 
 export default function VisualizationProject() {
-  return (
-    // <div>
-    // <div className="w-full bg-black text-white shadow-md">
-    //     <Navbar />
-    // </div>
-    
-    // <div className="min-h-screen bg-blue-50 text-black p-10">
-        
-    //   <h1 classNameName="text-4xl font-bold mb-6">Data Visualization Project</h1>
-    //   <p classNameName="text-lg mb-4">
-    //     This page contains a full description of the Data Visualization Project.
-    //   </p>
-
-    //   <img
-    //     src="/image/PCDashboard.png"
-    //     alt="Pest Control Dashboard"
-    //     classNameName="w-full max-w-4xl mx-auto rounded-md border border-gray-500"
-    //   />
-
-    //   <p classNameName="mt-6">
-    //     [Include all details, tools used, challenges, links to GitHub or demo, etc.]
-    //   </p>
-
-    //   <a
-    //     href="/projects"
-    //     classNameName="inline-block mt-10 text-blue-400 hover:underline"
-    //   >
-    //     ← Back to Projects
-    //   </a>
-    // </div>
-    // </div>
-
-    
+  return (   
     <div className="bg-blue-50">
     <Navbar />
     <section className="bg-blue-50 max-w-3xl mx-auto px-4 py-12">

@@ -96,11 +96,29 @@ export default function Projects() {
               alt="Pest Control Dashboard"
               className="w-full mt-4 rounded-md h-40 object-cover"
             />
-
           </div>
 
           {/* Visualization Project Card 2 */}
-          
+             <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-4">Texas Workforce Outlook</h3>
+            <p className="text-gray-400 mb-4">
+            Interactive Power BI dashboard that turns Texas Workforce Commission growth-occupation data 
+            into clear insights on projected 2022-2032 job gains, wages and industry hot spots across the state.
+            </p>
+            <div className="flex gap-2 flex-wrap mb-4">
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Power BI</span>
+            </div>
+            <a href="/projects/txWorkforce" className="text-blue-400 hover:underline">View Project</a>
+
+            <img
+              src="/image/texasJobs/dashpage1.png"
+              alt="Pest Control Dashboard"
+              className="w-full mt-4 rounded-md h-40 object-cover"
+            />
+          </div>
+
+
         </div>
       </section>
 
