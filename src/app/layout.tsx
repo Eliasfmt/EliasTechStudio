@@ -26,6 +26,16 @@ export default function RootLayout({
       <head>
         {/* This meta tag alone suppresses Chrome’s auto-translate bar */}
         <meta name="google" content="notranslate" />
+      <Script id="gtm-head" strategy="afterInteractive">
+        {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id=GTM-PSKH48XZ'+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PSKH48XZ');
+        `}
+      </Script>
+
       </head>
 
       {/* <body className="font-sans antialiased"> */}
@@ -33,29 +43,35 @@ export default function RootLayout({
         {/* {children}
       </body> */}
 
+  <body className="font-sans antialiased">
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-PSKH48XZ"
+      height="0"
+      width="0"
+      style={{ display: 'none', visibility: 'hidden' }}
+    ></iframe>
+  </noscript>
 
-          <body className="font-sans antialiased">
-  {/* Chatbase script */}
-  <Script id="chatbase-bubble" strategy="afterInteractive">
-    {`
-      window.chatbaseConfig = {
-        chatbotId: "2KDhX_QMcGLg7-KbhH2qq",
-      };
+    {/* Chatbase script */}
+    <Script id="chatbase-bubble" strategy="afterInteractive">
+      {`
+        window.chatbaseConfig = {
+          chatbotId: "2KDhX_QMcGLg7-KbhH2qq",
+        };
 
-      (function() {
-        var script = document.createElement("script");
-        script.src = "https://www.chatbase.co/embed.min.js";
-        script.async = true;
-        document.body.appendChild(script);
-      })();
-    `}
-  </Script>
+        (function() {
+          var script = document.createElement("script");
+          script.src = "https://www.chatbase.co/embed.min.js";
+          script.async = true;
+          document.body.appendChild(script);
+        })();
+      `}
+    </Script>
 
-  {/* Your page content */}
-  {children}
-</body>
-
-
+    {/* Your page content */}
+    {children}
+  </body>
     </html>
   );
 }
