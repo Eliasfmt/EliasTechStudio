@@ -18,12 +18,37 @@ export default function Projects() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
-          {/* Project Card 1 */}
+
+     {/* Project Card 1 */}
+     <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-4">Interactive Data Explorer</h3>
+            <p className="text-gray-400 mb-4">
+            Upload CSV or Excel files, ask questions in plain English, and get instant business 
+            insights.
+            </p>
+            <div className="flex gap-2 flex-wrap mb-4">
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">FastAPI</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">LangChain</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">OpenAI API</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">AWS Lambda</span>
+            </div>
+            <a href="https://intuiquery.com" className="text-blue-400 hover:underline">View Project ➔</a>
+
+            <img
+              src="/image/interactive_data.png"
+              alt="Interactive data explorer"
+              className="w-full mt-4 rounded-md h-40 object-cover"
+            />
+
+          </div>
+
+          {/* Project Card 2 */}
           <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-4">Client Query Assistant</h3>
             <p className="text-gray-400 mb-4">
-            Smart client data retrieval system for businesses, ask natural language questions, 
-            and instantly retrieve loan records.
+            Connect directly to SQL databases, run natural language queries, and retrieve answers
+             instantly.
             </p>
             <div className="flex gap-2 flex-wrap mb-4">
               <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
@@ -42,7 +67,7 @@ export default function Projects() {
 
           </div>
 
-          {/* Project Card 2 */}
+          {/* Project Card 3 */}
           <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-4">AI-Powered PDF & DOCX Assistant</h3>
             <p className="text-gray-400 mb-4">
@@ -121,9 +146,6 @@ export default function Projects() {
 
         </div>
       </section>
-
-
-
 
       {/* Project Details Sections (Hidden Below) */}
       <section id="project1" className="py-20 px-6 bg-black">
