@@ -115,7 +115,7 @@ export default function Projects() {
               <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">OpenAI API</span>
               <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Calendly API</span>
             </div>
-            <a href="https://intuiquery.com" className="text-blue-400 hover:underline">View Project ➔</a>
+            <a href="https://donbot.ai" className="text-blue-400 hover:underline">View Project ➔</a>
 
             <video 
             src="/videos/AiCall.mov" 
