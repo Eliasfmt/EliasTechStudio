@@ -16,8 +16,8 @@ export default function Projects() {
         <h2 className="text-4xl font-bold text-center mb-16 text-blue-200">
           Featured Projects
         </h2>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
+ 
+         <div className="grid md:grid-cols-3 gap-8 max-w-[95rem]">
 
      {/* Project Card 1 */}
      <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
@@ -93,6 +93,40 @@ export default function Projects() {
         </div>
       </section>
 
+
+ {/* AI Projects Section */}
+      <section className="flex flex-col items-center justify-center py-20 px-6">
+        <h2 className="text-4xl font-bold text-center mb-16 text-blue-200">
+          Artificial Intelligence Projects
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-[95rem]">
+
+     {/* Project Card 1 */}
+     <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-4">AI Voice Agent for Sales & Support</h3>
+            <p className="text-gray-400 mb-4">
+            Automated AI agent that answers calls, books appointments, and syncs with your CRM — reducing workload and boosting conversions.
+            </p>
+            <div className="flex gap-2 flex-wrap mb-4">
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Retell AI</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">GHL CRM</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Twilio</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">OpenAI API</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Calendly API</span>
+            </div>
+            <a href="https://intuiquery.com" className="text-blue-400 hover:underline">View Project ➔</a>
+
+            <video 
+            src="/videos/AiCall.mov" 
+            controls 
+            className="w-full mt-4 rounded-md h-40 object-cover"
+            />
+
+          </div>
+          </div> 
+</section>
+
         {/* Data Visualization Projects  */}
 
       <section className="flex flex-col items-center justify-center py-20 px-6">
@@ -100,7 +134,7 @@ export default function Projects() {
           Data Visualization Projects
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
+        <div className="grid md:grid-cols-3 gap-8 max-w-[95rem]">
           {/* Visualization Project Card 1 */}
           <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-4">Database & BI Dashboard for a Pest Control Business</h3>
@@ -146,6 +180,43 @@ export default function Projects() {
 
         </div>
       </section>
+
+
+
+ {/* Websites */}
+      <section className="flex flex-col items-center justify-center py-20 px-6">
+        <h2 className="text-4xl font-bold text-center mb-16 text-blue-200">
+          Websites Projects
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-[95rem]">
+
+     {/* Project Card 1 */}
+     <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold mb-4">AI-Enhanced Portfolio Website</h3>
+            <p className="text-gray-400 mb-4">
+            Designed and built a modern, AI-powered website with blogs, chatbots, and booking forms — fully editable with a CMS and deployed live.
+            </p>
+            <div className="flex gap-2 flex-wrap mb-4">
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">V0</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Sanity</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Vercel</span>
+              <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">ChatBase</span>
+            </div>
+            <a href="https://www.em-tech.ai" className="text-blue-400 hover:underline">View Project ➔</a>
+
+            <img
+              src="/image/website.png"
+              alt="Project Website image"
+              className="w-full mt-4 rounded-md h-40 object-cover"
+            />
+
+          </div>
+          </div> 
+</section>
+
+
 
       {/* Project Details Sections (Hidden Below) */}
       <section id="project1" className="py-20 px-6 bg-black">
