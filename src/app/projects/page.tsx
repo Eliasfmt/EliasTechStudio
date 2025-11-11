@@ -213,10 +213,54 @@ export default function Projects() {
             />
 
           </div>
+
+        {/* Project Card 2 */}
+            <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
+                    <h3 className="text-2xl font-bold mb-4">DonBot AI Website</h3>
+                    <p className="text-gray-400 mb-4">
+                    Built DonBot.ai’s bilingual website to showcase its voice AI agents for businesses. 
+                    Includes live AI assistant, CRM-connected lead forms, and booking automation — 
+                    all designed to demonstrate real-time conversational capabilities.
+                    </p>
+                    <div className="flex gap-2 flex-wrap mb-4">
+                      <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">V0</span>
+                      <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
+                      <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">CRM Integration</span>
+                      <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Vercel</span>
+                      <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Voice AI Chat</span>
+                    </div>
+                    <a href="https://www.donbot.ai/" className="text-blue-400 hover:underline">View Project ➔</a>
+
+                    <img
+                      src="/image/donbotSite.png"
+                      alt="Donbot Website image"
+                      className="w-full mt-4 rounded-md h-40 object-cover"
+                    />
+                  </div>
+
+
+          {/* Project Card 3 */}
+              <div className="bg-[#0a0a0a] p-6 rounded-lg shadow-lg">
+                      <h3 className="text-2xl font-bold mb-4">Multicredito Website</h3>
+                      <p className="text-gray-400 mb-4">
+                      Currently developing a modern website for Multicrédito, a financial institution in Lima offering microloans. 
+                      Built with Next.js and V0 to create a responsive Spanish-language platform highlighting their lending services and community focus.
+                      </p>
+                      <div className="flex gap-2 flex-wrap mb-4">
+                        <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">V0</span>
+                        <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
+                        <span className="bg-blue-800 px-3 py-1 rounded-full text-sm">Vercel</span>
+                      </div>
+                      <a href="https://multicredito-website.vercel.app/" className="text-blue-400 hover:underline">View Project ➔</a>
+
+                      <img
+                        src="/image/multicreditoSite.png"
+                        alt="Multicredito Website image"
+                        className="w-full mt-4 rounded-md h-40 object-cover"
+                      />
+                    </div>
           </div> 
 </section>
-
-
 
       {/* Project Details Sections (Hidden Below) */}
       <section id="project1" className="py-20 px-6 bg-black">
